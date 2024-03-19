@@ -1,0 +1,21 @@
+---
+
+- name: File Modules
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Folder creation
+    file:
+      path: /home/windowlinux/File_modules_folder
+      state: directory
+      owner: windowlinux
+      group: windowlinux
+
+  - name: File creation
+    file:
+      path: /home/windowlinux/File_module_folder/file.txt
+      state: touch                                                # if we change state-> absent (delete)
+      owner: windowlinux
+      group: windowlinux  
+      mode: u=rwr,g=rw,o=r                                       # we can do these to change permission   

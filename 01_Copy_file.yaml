@@ -1,0 +1,20 @@
+---
+- name: Copying file to remote server
+  hosts: all
+  become: true  
+
+  tasks:
+  - name: Copying files command
+    copy:
+      src: /home/bhuvan/test.txt     # soruce of the file
+      dest: /home/windowlinux        # destination of the file 
+      owner: windowlinux            # we can change the owner as per need
+      group: windowlinux            # we can change the group as per need
+      mode : '0777'            # here we can use number (or) ugo=rw  
+      backup: true
+   
+
+
+
+
+

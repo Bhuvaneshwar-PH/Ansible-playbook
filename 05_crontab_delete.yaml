@@ -1,0 +1,12 @@
+---
+
+- name: Modifcation/Delete the cronjob from remote
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Remove cronjob
+    cron:
+      name: First Cronjob from remote
+      user: windowlinux
+      state: absent  

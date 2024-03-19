@@ -1,0 +1,35 @@
+---
+
+- name: User management
+  hosts: all
+  become: true
+
+  tasks:
+  - name: creating User
+    user:
+      name: bhuvan
+      shell: /bin/bash
+      group: asian
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

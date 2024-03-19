@@ -1,0 +1,25 @@
+---
+
+- name: Adding cronJob to file
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Create crontab
+    cron:
+      name: First Cronjob from remote
+      minute: 48
+      hour: 11
+      day:  14
+      month: 3
+      weekday: thu
+      user: windowlinux
+      job: /home/windowlinux/cronjobs.sh  
+    # disabled: yes                       # if YES cronjob Comment-out
+
+
+
+
+
+
+

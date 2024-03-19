@@ -1,0 +1,33 @@
+---
+- name: User management passwd
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Setting/updating password for user
+    user:
+      name: bhuvan
+      update_password: always
+      password: "{{'abcd123' | password_hash('sha512')}}"  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

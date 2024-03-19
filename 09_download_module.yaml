@@ -1,0 +1,16 @@
+---
+- name: Download file to remote server
+  hosts: all
+  become: true
+  vars:
+    OwnGrP: windowlinux  
+
+  tasks:
+  - name: Download using get_url
+    get_url:
+      url: https://filesamples.com/samples/document/txt/sample3.txt
+      dest: /home/windowlinux  
+      owner: "{{ OwnGrP }}"
+      group: "{{ OwnGrP }}"
+      mode: u=rwx,g=rw,o=r  
+

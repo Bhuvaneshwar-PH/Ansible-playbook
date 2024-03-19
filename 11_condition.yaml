@@ -1,0 +1,15 @@
+---
+
+- name: Install service based on condition
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Another service
+    apt:
+      name: vim
+      state: present
+    when: ansible_distribution == 'CentOs' 
+    
+      # ansible_distribution is ansible in built variable
+      # to check use [ ansible -i  <inventory path> <host> -m setup  ]  

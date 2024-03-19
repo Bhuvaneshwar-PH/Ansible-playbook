@@ -1,0 +1,11 @@
+---
+- name: creating playbook to run script in remote server
+  hosts: all
+  become: true
+
+  tasks:  
+  - name: Run remote server scripts
+    shell: ./scripts.sh >> test.log
+    args:
+      chdir: /home/windowlinux
+      creates: test.log

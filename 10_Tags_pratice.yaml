@@ -1,0 +1,19 @@
+---
+- name: Pratice tags  
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Shell command 1
+    shell: ls -ltr >> tag1.log
+    args:
+      chdir: /home/windowlinux
+      creates: tag1.log  
+    tags: shell1    
+        
+  - name: Shell command 2
+    shell: df -h >> tag2.log
+    args:
+      chdir: /home/windowlinux
+      creates: tag2.log
+    tags: shell2  

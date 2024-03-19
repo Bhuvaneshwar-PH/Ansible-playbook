@@ -1,0 +1,12 @@
+---
+
+- name: User management 
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Delete user from remote device
+    user:
+      name: bhuvan
+      remove: yes
+      state: absent  
